@@ -1,0 +1,16 @@
+-- Teradata procedure--
+
+-- Create product table and write a procedure --
+
+CREATE TABLE PRODUCT ,NO FALLBACK 
+(PRODUCT_ID BYTEINT,
+PRODUCT_NAME VARCHAR(20),
+PRODUCT_COLOR VARCHAR(10)
+)
+PRIMARY INDEX(PRODCUT_ID);
+
+--------------------------------------------------------------
+CREATE PROCEDURE PROC1(IN ID BYTEINT, OUT COLOR VARCHAR(10))
+BEGIN 
+SELECT PRODUCT_CODE IN COLOR FROM PRODUCT WHERE PRODUCT_ID=ID;
+END;
