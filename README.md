@@ -1,0 +1,2 @@
+# Teradata-Practice
+Teradata codes
