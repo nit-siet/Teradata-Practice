@@ -1,0 +1,27 @@
+----------------------------------
+----customeraccountsload.bteq-----
+----------------------------------
+
+.LOGON 192.168.211.128/DBC,DBC;
+DATABASE FINANCIAL;
+
+----INSERTING DATA FROM Customer_stg to customer_new --- 
+----AFTER DELETING ROWS FROM CUSTOEMR_NEW---------------
+DELETE FROM CUSTOMER_NEW;
+
+INSERT INTO CUSTOMER_NEW
+select * from customer_stg;
+
+
+---INSERTING DATA INTO ACCOUNTS FROM Accounts_stg_accounts----
+---AFTER DELETING FROM ACCOUNTS-------------------------------
+
+DELETE FROM ACCOUNTS;
+
+
+INSERT INTO ACCOUNTS
+select * from ACCOUNTS_STG;
+
+.LOGOFF;
+.QUIT;
+
